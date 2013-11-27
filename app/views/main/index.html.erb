@@ -27,6 +27,14 @@
           <%= button_to "View details >>", @pianist, class: 'btn float-left', method: :get %>
         </p>
     </div>
+    <div class="span4">
+      <h2><%= link_to "Accompanist", @accompanist %></h2>
+        <%= link_to (image_tag @accompanist_image_url, class: "img-circle float-left"), @accompanist %>
+        <p><%= @accompanist.my_story %></p>
+        <p>
+          <%= button_to "View details >>", @accompanist, class: 'btn float-left', method: :get %>
+        </p>
+    </div>
   </div>
 </div>
 

@@ -14,12 +14,12 @@
     <tbody>
       <% @jobs.each do |e| %>
         <tr>
-          <td><%= e.title %></td>
-          <td><%= e.company %></td>
-          <td><%= e.short_descriptgion %></td>
+          <td><%= link_to e.title, e %></td>
+          <td><%= link_to e.company, e %></td>
+          <td><%= e.short_description %></td>
           <td><%= e.location %></td>
           <td><%= e.duration %></td>
-          <td><%= link_to e.url, e.url %></td>
+          <td><%= link_to e.url, e.url, target: "_blank" %></td>
         </tr>
       <% end %>
     </tbody>
