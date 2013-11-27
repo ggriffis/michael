@@ -1,0 +1,33 @@
+<h1 class="text-center">Composers</h1>
+<div class="table-responsive">
+  <table class="table table-striped b-t text-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Pieces</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @composers.each do |e| %>
+        <tr>
+          <td><%= link_to e.full_name, e %></td>
+          <td><%= e.abbreviated_description %></td>
+          <td>
+            <% piece_list = e.ordered_pieces %>
+            <% if !piece_list.empty? %>
+              <%= link_to piece_list.first.name, piece_list.first %>
+              <% if piece_list.size > 1 %>
+                <% piece_list[1, piece_list.size - 1].each do |p| %>
+                  <%= ", " %><%= link_to p.name, p %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Back', :back %>

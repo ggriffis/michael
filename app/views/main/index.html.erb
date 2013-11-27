@@ -1,0 +1,32 @@
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class='inner-item'>
+        <%= image_tag("beach_background.jpg") %>
+      </div>
+    </div>
+    <div class="item">
+      <div class='inner-item'>
+        <%= image_tag("beach_sunset.jpg") %>
+      </div>
+    </div>
+    <div class="item">
+      <div class='inner-item'>
+        <%= image_tag("sound.jpg") %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <h2><%= link_to "Pianist", @pianist %></h2>
+        <%= link_to (image_tag @pianist_image_url, class: "img-circle float-left"), @pianist %>
+        <p><%= @pianist.my_story %></p>
+        <p>
+          <%= button_to "View details >>", @pianist, class: 'btn float-left', method: :get %>
+        </p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,29 @@
+<h1 class="text-center">Jobs</h1>
+<div class="table-responsive">
+  <table class="table table-striped b-t text-sm">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Duration</th>
+        <th>Url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |e| %>
+        <tr>
+          <td><%= e.title %></td>
+          <td><%= e.company %></td>
+          <td><%= e.short_descriptgion %></td>
+          <td><%= e.location %></td>
+          <td><%= e.duration %></td>
+          <td><%= link_to e.url, e.url %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Back', @musician %>
