@@ -1,0 +1,2 @@
+class Teacher < Musician
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131127183552) do
+ActiveRecord::Schema.define(:version => 20131128192611) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(:version => 20131127183552) do
   end
 
   create_table "musician_endorsements", :force => true do |t|
-    t.string  "description"
+    t.text    "description",           :limit => 255
     t.string  "endorser_name"
     t.string  "endorser_relationship"
     t.integer "musician_id"
@@ -157,6 +157,11 @@ ActiveRecord::Schema.define(:version => 20131127183552) do
     t.integer "composer_id"
     t.string  "duration"
     t.string  "url"
+  end
+
+  create_table "teaching_locations", :force => true do |t|
+    t.string  "description"
+    t.integer "musician_id"
   end
 
 end

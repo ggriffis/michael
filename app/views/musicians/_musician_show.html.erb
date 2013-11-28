@@ -133,7 +133,7 @@
               <% @endorsements.each do |e| %>
                 <tr>
                   <td><%= link_to e.endorser_name, e %></td>
-                  <td><%= e.description %></td>
+                  <td><%= e.abbreviated_description %></td>
                 </tr>
               <% end %>
             </tbody>

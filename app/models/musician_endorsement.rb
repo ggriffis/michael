@@ -5,4 +5,8 @@ class MusicianEndorsement < ActiveRecord::Base
   def abbreviated_description
     description.truncate(200, :omission => "...")
   end
+
+  def longer_abbreviated_description
+    description.truncate(300, :omission => "...")
+  end
 end

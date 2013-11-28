@@ -1,7 +1,8 @@
 class Musician < ActiveRecord::Base
   attr_accessible :type, :my_story, :musician_links_attributes, :musician_images_attributes, :musician_endorsements_attributes,
                    :gigs_attributes, :genres_attributes, :education_summary,
-                  :musician_video_links_attributes, :mentors_attributes, :musician_jobs_attributes
+                  :musician_video_links_attributes, :mentors_attributes, :musician_jobs_attributes,
+                  :teaching_locations_attributes
 
   has_many :musician_links
   has_many :musician_images
@@ -11,6 +12,7 @@ class Musician < ActiveRecord::Base
   has_many :musician_video_links
   has_many :mentors
   has_many :musician_jobs
+  has_many :teaching_locations
 
   accepts_nested_attributes_for :musician_links,
                                  :musician_images,
@@ -20,6 +22,7 @@ class Musician < ActiveRecord::Base
                                  :musician_video_links,
                                  :mentors,
                                  :musician_jobs,
+                                 :teaching_locations,
                                  allow_destroy: true
   def self.singleton
     self.all.first

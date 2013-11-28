@@ -2,17 +2,17 @@
   <div class="carousel-inner">
     <div class="item active">
       <div class='inner-item'>
-        <%= image_tag("beach_background.jpg") %>
+        <%= image_tag("close_up_keys.jpg") %>
       </div>
     </div>
     <div class="item">
       <div class='inner-item'>
-        <%= image_tag("beach_sunset.jpg") %>
+        <%= image_tag("floating_notes.jpg") %>
       </div>
     </div>
     <div class="item">
       <div class='inner-item'>
-        <%= image_tag("sound.jpg") %>
+        <%= image_tag("metal_notes.jpg") %>
       </div>
     </div>
   </div>
@@ -33,6 +33,14 @@
         <p><%= @accompanist.my_story %></p>
         <p>
           <%= button_to "View details >>", @accompanist, class: 'btn float-left', method: :get %>
+        </p>
+    </div>
+    <div class="span4">
+      <h2><%= link_to "Teacher", @teacher %></h2>
+        <%= link_to (image_tag @teacher_image_url, class: "img-circle float-left"), @teacher %>
+        <p><%= @teacher.my_story %></p>
+        <p>
+          <%= button_to "View details >>", @teacher, class: 'btn float-left', method: :get %>
         </p>
     </div>
   </div>
